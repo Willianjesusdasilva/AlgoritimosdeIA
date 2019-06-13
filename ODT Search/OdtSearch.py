@@ -2,12 +2,12 @@ from odfdo import Document
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
-pesquisa = input('Escolha o texto:')
-filename = "test.odt"
+input_to_compare = input('Escolha o texto:')
+file_name = "test.odt"
 
-doc = Document(filename)
-text = doc.get_formatted_text()
+open_document = Document(filename)
+text_formatted = open_document.get_formatted_text()
 
 
-result = fuzz.partial_ratio(str(pesquisa),str(text))
+result = fuzz.partial_ratio(str(input_to_compare),str(text_formatted))
 print('Porcentagem de semelhança: '+ str(result))
